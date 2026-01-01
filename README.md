@@ -3,8 +3,8 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<title>Hotel Etoile | Asistente Virtual</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asistente Virtual</title>
 
 <style>
 /* ================= RESET ================= */
@@ -12,172 +12,224 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* ================= BASE ================= */
-body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
-    color: #222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
-/* ================= CONTENEDOR ================= */
-.chat-container {
-    width: 100%;
-    max-width: 420px;
-    background: #ffffff;
-    border: 1px solid #ddd;
-    display: flex;
-    flex-direction: column;
-    height: 90vh;
+body {
+    background: #f2f2f2;
+    color: #222;
 }
 
 /* ================= HEADER ================= */
-.chat-header {
+header {
     background: #111;
     color: #fff;
-    padding: 16px;
+    padding: 40px 20px;
     text-align: center;
-    font-size: 16px;
-    font-weight: bold;
 }
 
-/* ================= MENSAJES ================= */
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+/* ================= SECTIONS ================= */
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* ================= SERVICES ================= */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
+.service {
+    background: #fff;
+    padding: 25px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+/* ================= CHAT ================= */
+.chat-box {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+}
+
 .chat-messages {
     flex: 1;
-    padding: 15px;
+    padding: 20px;
     overflow-y: auto;
 }
 
-/* ================= BURBUJAS ================= */
-.message {
-    margin-bottom: 12px;
-    line-height: 1.4;
-    font-size: 14px;
+.msg {
+    margin-bottom: 15px;
+    max-width: 80%;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.ia {
+    background: #e9e9e9;
 }
 
 .user {
-    text-align: right;
-    color: #000;
+    background: #111;
+    color: #fff;
+    align-self: flex-end;
 }
 
-.bot {
-    text-align: left;
-    color: #444;
-}
-
-/* ================= INPUT ================= */
 .chat-input {
     display: flex;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #ccc;
 }
 
 .chat-input input {
     flex: 1;
-    padding: 12px;
+    padding: 15px;
     border: none;
-    font-size: 14px;
+    font-size: 1rem;
 }
 
 .chat-input button {
-    padding: 12px 18px;
-    border: none;
     background: #111;
     color: #fff;
+    border: none;
+    padding: 0 25px;
     cursor: pointer;
 }
 
-.chat-input button:hover {
-    background: #333;
+/* ================= FOOTER ================= */
+footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
 }
 
 /* ================= RESPONSIVE ================= */
-@media (max-width: 480px) {
-    .chat-container {
-        height: 100vh;
-        border: none;
-    }
+@media(max-width:768px){
+    header h1 { font-size: 2rem; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="chat-container">
-    <div class="chat-header">
-        Asistente Virtual
-    </div>
+<header>
+    <h1>Hotel Etoile</h1>
+    <p>Atención profesional · Confort · Asistencia 24/7</p>
+</header>
 
-    <div class="chat-messages" id="chat">
-        <div class="message bot">
-            Hola, soy el asistente virtual. Estoy disponible para ayudarte con información, servicios y consultas generales.
+<section>
+    <h2>Servicios</h2>
+    <div class="services">
+        <div class="service">Habitaciones confortables y equipadas</div>
+        <div class="service">WiFi en todo el hotel</div>
+        <div class="service">Desayuno incluido</div>
+        <div class="service">Limpieza diaria</div>
+        <div class="service">Seguridad permanente</div>
+        <div class="service">Atención personalizada</div>
+    </div>
+</section>
+
+<section>
+    <h2>Asistente Virtual</h2>
+
+    <div class="chat-box">
+        <div class="chat-messages" id="chat">
+            <div class="msg ia">
+                Hola, soy el asistente virtual del Hotel Etoile. ¿En qué puedo ayudarte?
+            </div>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Escribí tu consulta...">
+            <button onclick="sendMessage()">Enviar</button>
         </div>
     </div>
+</section>
 
-    <div class="chat-input">
-        <input type="text" id="userInput" placeholder="Escribí tu consulta..." />
-        <button onclick="sendMessage()">Enviar</button>
-    </div>
-</div>
+<section>
+    <h2>Contacto</h2>
+    <p style="text-align:center;">
+        📍 Santiago del Estero 1869<br>
+        📞 0223 493-4968
+    </p>
+</section>
+
+<footer>
+    © Hotel Etoile · Todos los derechos reservados
+</footer>
 
 <script>
-/* ================= IA CONVERSACIONAL ================= */
-
-function sendMessage() {
+function sendMessage(){
     const input = document.getElementById("userInput");
     const text = input.value.trim();
-    if (text === "") return;
+    if(text === "") return;
 
     addMessage(text, "user");
     input.value = "";
 
     setTimeout(() => {
-        const response = getResponse(text);
-        addMessage(response, "bot");
-    }, 500);
+        addMessage(getResponse(text), "ia");
+    }, 600);
 }
 
-function addMessage(text, sender) {
+function addMessage(text, type){
     const chat = document.getElementById("chat");
-    const message = document.createElement("div");
-    message.className = "message " + sender;
-    message.textContent = text;
-    chat.appendChild(message);
+    const msg = document.createElement("div");
+    msg.className = "msg " + type;
+    msg.textContent = text;
+    chat.appendChild(msg);
     chat.scrollTop = chat.scrollHeight;
 }
 
-function getResponse(message) {
-    const msg = message.toLowerCase();
+function getResponse(text){
+    text = text.toLowerCase();
 
-    if (msg.includes("horario")) {
-        return "Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00.";
+    if(text.includes("ubic") || text.includes("direccion")){
+        return "El Hotel Etoile se encuentra ubicado en Santiago del Estero 1869.";
     }
 
-    if (msg.includes("contacto") || msg.includes("telefono")) {
-        return "Podés contactarnos a través del formulario del sitio o por nuestros medios oficiales de atención.";
+    if(text.includes("telefono") || text.includes("contacto")){
+        return "Podés comunicarte con nosotros al 0223 493-4968.";
     }
 
-    if (msg.includes("servicios")) {
-        return "Ofrecemos atención personalizada, información clara y soporte continuo para nuestros usuarios.";
+    if(text.includes("servicio")){
+        return "Ofrecemos habitaciones confortables, WiFi, desayuno, limpieza diaria, seguridad y atención personalizada.";
     }
 
-    if (msg.includes("ubicación") || msg.includes("direccion")) {
-        return "Nuestra información de ubicación está disponible en la sección de contacto del sitio.";
+    if(text.includes("horario")){
+        return "La atención es permanente. Podés consultarnos en cualquier momento.";
     }
 
-    if (msg.includes("politica") || msg.includes("condiciones")) {
-        return "Trabajamos con políticas claras, orientadas a la transparencia y el buen servicio al usuario.";
+    if(text.includes("precio") || text.includes("tarifa")){
+        return "Para tarifas y disponibilidad, te recomendamos comunicarte directamente con recepción.";
     }
 
-    if (msg.includes("ayuda")) {
-        return "Estoy acá para ayudarte. Podés consultarme sobre servicios, horarios, contacto o uso del sitio.";
-    }
-
-    return "No logré entender tu consulta con claridad. ¿Podrías reformularla o indicar qué información necesitás?";
+    return "No estoy seguro de haber entendido tu consulta. ¿Podrías reformularla o consultar sobre servicios, ubicación u horarios?";
 }
 </script>
 
