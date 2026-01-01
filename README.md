@@ -1,2 +1,293 @@
 # Hotel-etoile-bienvenidos-
 Bienvenidos a el hotel etoile
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Etoile | Asistente Inteligente</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* ================= RESET ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #05070d, #0b1c2d);
+            color: #eaeaea;
+            line-height: 1.6;
+        }
+
+        /* ================= HEADER ================= */
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            background: radial-gradient(circle, #0f2a44, #04070d);
+            border-bottom: 2px solid #1e3a5f;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: #d4af37;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin-top: 10px;
+            color: #9bb3c9;
+            font-size: 1.1rem;
+        }
+
+        /* ================= SECTIONS ================= */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #d4af37;
+            margin-bottom: 40px;
+        }
+
+        /* ================= PRESENTATION ================= */
+        .presentation {
+            text-align: center;
+            color: #cfd9e4;
+        }
+
+        .presentation p {
+            max-width: 900px;
+            margin: auto;
+            font-size: 1.1rem;
+        }
+
+        /* ================= SERVICES ================= */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: rgba(15, 35, 60, 0.6);
+            border: 1px solid #1e3a5f;
+            padding: 25px;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+        }
+
+        .service-card h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        /* ================= IA ASSISTANT ================= */
+        .assistant {
+            max-width: 900px;
+            margin: auto;
+            background: rgba(10, 25, 45, 0.75);
+            border: 1px solid #1e3a5f;
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .chat {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .message {
+            padding: 18px 20px;
+            border-radius: 14px;
+            max-width: 85%;
+            animation: fadeIn 1s ease;
+        }
+
+        .ia {
+            align-self: flex-start;
+            background: linear-gradient(135deg, #0f3a5f, #0b2238);
+            border-left: 4px solid #d4af37;
+        }
+
+        .user {
+            align-self: flex-end;
+            background: #1b2f47;
+            border-right: 4px solid #4aa3ff;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ================= FAQ ================= */
+        .faq {
+            display: grid;
+            gap: 25px;
+        }
+
+        .faq-item {
+            background: rgba(15, 35, 60, 0.6);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #1e3a5f;
+        }
+
+        .faq-item h4 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        /* ================= CONTACT ================= */
+        .contact {
+            text-align: center;
+            color: #cfd9e4;
+        }
+
+        .contact p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background: #04070d;
+            text-align: center;
+            padding: 25px 15px;
+            border-top: 1px solid #1e3a5f;
+            color: #8fa9c4;
+            font-size: 0.9rem;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Hotel Etoile</h1>
+    <p>Hospitalidad inteligente · Automatización · Confort de categoría</p>
+</header>
+
+<section class="presentation">
+    <h2>Bienvenidos al Hotel Etoile</h2>
+    <p>
+        El Hotel Etoile combina elegancia, confort y tecnología para ofrecer una experiencia
+        moderna y segura. Ubicado estratégicamente en Santiago del Estero 1869, brindamos
+        atención profesional y servicios diseñados para satisfacer a nuestros huéspedes
+        con los más altos estándares de calidad.
+    </p>
+</section>
+
+<section>
+    <h2>Servicios del Hotel</h2>
+    <div class="services">
+        <div class="service-card">
+            <h3>Habitaciones</h3>
+            <p>Habitaciones confortables, modernas y completamente equipadas.</p>
+        </div>
+        <div class="service-card">
+            <h3>WiFi de Alta Velocidad</h3>
+            <p>Conectividad estable y segura en todas las áreas del hotel.</p>
+        </div>
+        <div class="service-card">
+            <h3>Desayuno</h3>
+            <p>Servicio de desayuno completo con opciones variadas.</p>
+        </div>
+        <div class="service-card">
+            <h3>Limpieza y Mantenimiento</h3>
+            <p>Protocolos de limpieza rigurosos y mantenimiento constante.</p>
+        </div>
+        <div class="service-card">
+            <h3>Seguridad</h3>
+            <p>Instalaciones seguras y controladas las 24 horas.</p>
+        </div>
+        <div class="service-card">
+            <h3>Atención al Cliente</h3>
+            <p>Personal capacitado y asistencia permanente.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Asistente Inteligente del Hotel</h2>
+    <div class="assistant">
+        <div class="chat">
+            <div class="message ia">
+                Soy el asistente virtual del Hotel Etoile y estoy aquí para ayudarte.
+            </div>
+            <div class="message user">
+                ¿Dónde está ubicado el hotel?
+            </div>
+            <div class="message ia">
+                El Hotel Etoile se encuentra ubicado en Santiago del Estero 1869, en una zona estratégica y de fácil acceso.
+            </div>
+            <div class="message user">
+                ¿Qué servicios incluye la estadía?
+            </div>
+            <div class="message ia">
+                La estadía incluye habitaciones confortables, WiFi, limpieza diaria, seguridad y atención personalizada.
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Preguntas Frecuentes</h2>
+    <div class="faq">
+        <div class="faq-item">
+            <h4>Check-in y Check-out</h4>
+            <p>El check-in y check-out se realizan en horarios flexibles según disponibilidad.</p>
+        </div>
+        <div class="faq-item">
+            <h4>¿El hotel cuenta con WiFi?</h4>
+            <p>Sí, el Hotel Etoile ofrece WiFi de alta velocidad en todas sus instalaciones.</p>
+        </div>
+        <div class="faq-item">
+            <h4>¿Cómo es la seguridad?</h4>
+            <p>Contamos con protocolos de seguridad y monitoreo permanente.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <h2>Contacto y Reservas</h2>
+    <p>📍 Dirección: Santiago del Estero 1869</p>
+    <p>📞 Para reservas y consultas, comuníquese con nuestra recepción</p>
+    <p>✉️ Atención profesional y personalizada</p>
+</section>
+
+<footer>
+    <p>© Hotel Etoile · Hospitalidad Inteligente · Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
